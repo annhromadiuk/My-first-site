@@ -92,11 +92,13 @@ li.dropdown {
 .column.middle p {
     margin-top: 0;
 }
-.row:after {
+/* для чого footer поміщати у after?(доречі after пишеться ::after */
+.row::after {
     content: "";
     display: table;
     clear: both;
 }
+/* дещо недороблено */
 @media screen and (max-width: 600px) {
     .column.side, .column.middle {
         width: 100%;
