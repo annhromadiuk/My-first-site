@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-image: url("../fotos/fon.jpg");
+}
+.header, .footer {
+    background-color: lightseagreen;
+    padding: 20px;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+li.right {
+    float: right;
+    display: inline-block;
+}
+
+li a, .dropbtn, .dropnext {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn, .right:hover .dropnext{
+    background-color: dodgerblue;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+.dropdown-content, .horisontal {
+    display: none;
+    position: absolute;
+    background-color: darkseagreen;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a, .horisontal a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover, .horisontal a:hover {background-color: green;}
+
+.dropdown:hover .dropdown-content, .right:hover .horisontal {
+    display: block;
+}
+.active {
+    background-color: #4CAF50;
+}
+.column {
+    float: left;
+    padding: 10px;
+}
+.column.side {
+    width: 30%;
+}
+.column.middle {
+    width: 60%;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+.column.middle::before {
+    content: ''; /* Выводим пустой блок */
+    background: #def0e7; /* Цвет фона */
+    transform: skewY(-10deg); /* Скашиваем блок */
+    position: absolute; /* Абсолютное позиционирование */
+    width: 100%; height: 100%; /* Размеры */
+    left: 0; /* Положение от левого края */
+    top: -70px; /* Сдвигаем вверх */
+    z-index: -1; /* Ставим блок ниже текста */
+}
+.column.middle p {
+    margin-top: 0;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+.indent{
+    text-indent: 40px;
+}
+img {
+    float: left;
+}
